@@ -25,7 +25,7 @@ public class LottoController {
     @GetMapping("get-lucky-number")
     public ResponseEntity<Object> getLotto(@RequestParam int count){
         log.info("getLuckyNumber{}",count);
-        return new ResponseEntity(GetLuckyNumRspDTO.builder().luckyNumber(lottoService.createLottoNumber(count).get(0)).build(), HttpStatus.OK);
+        return new ResponseEntity(GetLuckyNumRspDTO.builder().luckyNumber(lottoService.createLottoNumber(count)).build(), HttpStatus.OK);
     }
 
     @GetMapping("win-percentage")
