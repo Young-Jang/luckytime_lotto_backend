@@ -54,11 +54,9 @@ public class LottoService {
         for(int i = 1; i < 7; i++) {
             luckyNumber.append(jsonObject.get("drwtNo"+i)).append(",");
         }
-        System.out.println("[Lucky Number]: "+luckyNumber.toString());
         boolean endFlag = false;
         int count = 0;
         long maxCount = Long.parseLong(jsonObject.get("firstWinamnt").toString())/1000;
-        System.out.println("[Lucky Number]: "+luckyNumber.toString() +"[maxNumber]: "+maxCount);
 
         while(!endFlag){
             List<String> lottoList = createLottoNumber(1);
@@ -75,6 +73,5 @@ public class LottoService {
                 "\n - 프로그램 "+count+"번 실행시 당첨" +
                 "\n - 당첨 금액 "+format.format(Long.parseLong(jsonObject.get("firstWinamnt").toString()))+"원"+
                 "\n - 구매 금액 "+format.format(count * 1000)+"원";
-
    }
 }
